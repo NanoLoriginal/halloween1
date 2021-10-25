@@ -10,6 +10,9 @@ class Tableau1 extends Phaser.Scene{
         //bg 2 (tout au fond et très flou)
         this.load.image('bg2-terrain-2', 'assets/level/background-2/bg2-terrain-2.png');
         this.load.image('bg2-tree-2', 'assets/level/background-2/bg2-tree-2.png');
+        this.load.image('bg2-terrain-1','assets/level/background-2/bg2-terrain-1.png');
+        this.load.image('bg2-tree-3','assets/level/background-2/bg2-tree-3.png');
+
 
         //bg 1 (gris légèrement flou)
         this.load.image('bg1-terrain-3', 'assets/level/background-1/bg-terrain-3.png');
@@ -60,8 +63,13 @@ class Tableau1 extends Phaser.Scene{
          * Terrain dans bg2
          * @type {Phaser.GameObjects.Image}
          */
-        let bg2Terrain2=this.add.image(-100,100, 'bg2-terrain-2').setOrigin(0,0);
+        let bg2Terrain2 = this.add.image(-100,100, 'bg2-terrain-2').setOrigin(0,0);
         this.bg2Container.add(bg2Terrain2);
+
+        let bg2Terrain1 = this.add.image(750,100, 'bg2-terrain-1').setOrigin(0,0);
+        this.bg2Container.add(bg2Terrain1);
+
+
         /**
          * Arbre dans bg2
          * @type {Phaser.GameObjects.Image}
@@ -69,6 +77,12 @@ class Tableau1 extends Phaser.Scene{
         let bg2Tree2=this.add.image(400,-50, 'bg2-tree-2').setOrigin(0,0);
         this.bg2Container.add(bg2Tree2);
         bg2Tree2.angle=-5; //pencher l'arbre de -5 degrès
+
+        let bg2Tree3=this.add.image(750,-100, 'bg2-tree-3').setOrigin(0,0);
+        this.bg2Container.add(bg2Tree3);
+        bg2Tree3.angle=-5; //pencher l'arbre de -5 degrès
+
+
 
         //--------------background 1 (gris) --------------------
 
@@ -81,7 +95,7 @@ class Tableau1 extends Phaser.Scene{
          * Terrain
          * @type {Phaser.GameObjects.Image}
          */
-        let bg1Terrain3=this.add.image(-300,200, 'bg1-terrain-3').setOrigin(0,0);
+        let bg1Terrain3=this.add.image(-400,200, 'bg1-terrain-3').setOrigin(0,0);
         this.bg1Container.add(bg1Terrain3);
 
         //-------------ground (premier plan noir)---------------------------
