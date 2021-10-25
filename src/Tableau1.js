@@ -39,7 +39,6 @@ class Tableau1 extends Phaser.Scene{
 
         for(let i=1;i<=3;i++){
             this.load.image('bg-animation-'+i,'assets/level/background-2/bg-animation/bg-animation-'+i+'.png');
-
         }
     }
 
