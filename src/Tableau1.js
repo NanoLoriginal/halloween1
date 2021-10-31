@@ -142,7 +142,7 @@ class Tableau1 extends Phaser.Scene{
          * @type {Phaser.GameObjects.Image}
          */
         //ici on va calculer les positions
-        let gMid1=this.add.image(0,350, 'gMid').setOrigin(0,0);
+        let gMid1=this.add.image(-100,350, 'gMid').setOrigin(0,0);
         this.groundContainer.add(gMid1);
         /**
          * Terrain 2
@@ -154,7 +154,7 @@ class Tableau1 extends Phaser.Scene{
          * Terrain 3
          * @type {Phaser.GameObjects.Image}
          */
-        let gMid3=this.add.image(gMid2.x+90,350, 'gRight').setOrigin(0,0);
+        let gMid3=this.add.image(gMid2.x+150,350, 'gRight').setOrigin(0,0);
         this.groundContainer.add(gMid3);
         /**
          * De l'herbe en textures qui se répète
