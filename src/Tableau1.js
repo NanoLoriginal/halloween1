@@ -47,7 +47,7 @@ class Tableau1 extends Phaser.Scene{
         //texture au fond  TODO élève : faire une boucle pour charger les 3 images et démontrer par la même que vous savez aller au plus simple
 
         for(let i=1;i<=3;i++){
-            this.load.image('bg-animation-'+i,'assets/level/background-2/bg-animation/bg-animation-'+i+'.png');
+            this.load.image('bg-animation-'+i, 'assets/level/background-2/bg-animation/bg-animation-'+i+'.png');
         }
     }
 
@@ -113,19 +113,19 @@ class Tableau1 extends Phaser.Scene{
          */
         let bg1Terrain3=this.add.image(-400,200, 'bg1-terrain-3').setOrigin(0,0);
         let bg1Tree3=this.add.image(170, -80,'bg1-tree-3').setOrigin(0,0);
-        bg1Tree3.setScale  (0.6,0.6);
         let bg1Tree1=this.add.image(-20, -25, 'bg1-tree-1').setOrigin(0, 0);
-        let bg1Tree2=this.add.image(900, -25, 'bg1-tree-2').setOrigin(0, 0);
+        let bg1Tree2=this.add.image(900, -10, 'bg1-tree-2').setOrigin(0, 0);
         let bg1Terrain1=this.add.image(680, 300, 'bg1-terrain-1').setOrigin(0, 0);
         let bg1Terrain4=this.add.image(400, 420, 'bg1-terrain-4').setOrigin(0, 0);
 
         this.bg1Container.add(bg1Terrain3);
         this.bg1Container.add(bg1Terrain4);
-        this.bg1Container.add(bg1Tree3);
+        this.bg1Container.add(bg1Tree2);
         this.bg1Container.add(bg1Tree1);
         this.bg1Container.add(bg1Terrain1);
         bg1Tree1.setScale(0.6, 0.6);
         bg1Tree2.setScale(0.6, 0.6);
+        bg1Tree3.setScale(0.6, 0.6);
         bg1Terrain1.setScale(0.5, 0.5);
 
         //-------------ground (premier plan noir)---------------------------
