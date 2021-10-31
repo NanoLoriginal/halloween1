@@ -84,7 +84,7 @@ class Tableau1 extends Phaser.Scene{
 
         let bg2Tree3=this.add.image(750,-100, 'bg2-tree-3').setOrigin(0,0);
         this.bg2Container.add(bg2Tree3);
-        bg2Tree3.angle=-5; //pencher l'arbre de -5 degrès
+        bg2Tree3.angle=-10; //pencher l'arbre de -5 degrès
 
 
 
