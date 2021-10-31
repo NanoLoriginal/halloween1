@@ -67,11 +67,12 @@ class Tableau1 extends Phaser.Scene{
          * Terrain dans bg2
          * @type {Phaser.GameObjects.Image}
          */
-        let bg2Terrain2 = this.add.image(-100,100, 'bg2-terrain-2').setOrigin(0,0);
+        let bg2Terrain2 = this.add.image(-135,100, 'bg2-terrain-2').setOrigin(0,0);
         this.bg2Container.add(bg2Terrain2);
         bg2Terrain2.setScale(1, 1.1);
-        let bg2Terrain1 = this.add.image(750,100, 'bg2-terrain-1').setOrigin(0,0);
+        let bg2Terrain1 = this.add.image(720,180, 'bg2-terrain-1').setOrigin(0,0);
         this.bg2Container.add(bg2Terrain1);
+        bg2Terrain1.setScale(0.7, 0.7)
 
 
         /**
@@ -80,13 +81,13 @@ class Tableau1 extends Phaser.Scene{
          */
         let bg2Tree2=this.add.image(430,-30, 'bg2-tree-2').setOrigin(0,0);
         this.bg2Container.add(bg2Tree2);
-        bg2Tree2.angle=-5; //pencher l'arbre de -5 degrès
         bg2Tree2.setScale(0.5, 0.5);
 
 
-        let bg2Tree3=this.add.image(750,-100, 'bg2-tree-3').setOrigin(0,0);
+        let bg2Tree3=this.add.image(690,-50, 'bg2-tree-3').setOrigin(0,0);
         this.bg2Container.add(bg2Tree3);
         bg2Tree3.angle=-10; //pencher l'arbre de -5 degrès
+        bg2Tree3.setScale(0.8, 0.8);
 
 
 
@@ -102,7 +103,7 @@ class Tableau1 extends Phaser.Scene{
          * @type {Phaser.GameObjects.Image}
          */
         let bg1Terrain3=this.add.image(-400,200, 'bg1-terrain-3').setOrigin(0,0);
-        let bg1Tree3=this.add.image(100, -100,'bg1-tree-3').setOrigin(0,0);
+        let bg1Tree3=this.add.image(170, -80,'bg1-tree-3').setOrigin(0,0);
         bg1Tree3.setScale  (0.6,0.6);
         this.bg1Container.add(bg1Terrain3);
         this.bg1Container.add(bg1Tree3);
