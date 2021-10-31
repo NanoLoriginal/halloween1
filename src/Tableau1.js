@@ -58,11 +58,6 @@ class Tableau1 extends Phaser.Scene{
      */
     create(){
 
-        /**
-         * Fond très clair avec une trame
-         * @type {Phaser.GameObjects.Sprite}
-         */
-        let bgAnimationA=this.add.sprite(0,0, 'bg-animation-a').setOrigin(0,0);
 
         //--------------background 2 (tout au fond et flou)--------------------
 
