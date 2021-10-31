@@ -88,10 +88,10 @@ class Tableau1 extends Phaser.Scene{
         bg2Tree2.setScale(0.5, 0.5);
 
 
-        let bg2Tree3=this.add.image(690,-50, 'bg2-tree-3').setOrigin(0,0);
+        let bg2Tree3=this.add.image(720,-50, 'bg2-tree-3').setOrigin(0,0);
         this.bg2Container.add(bg2Tree3);
         bg2Tree3.angle=-10; //pencher l'arbre de -5 degrès
-        bg2Tree3.setScale(0.8, 0.8);
+        bg2Tree3.setScale(0.6, 0.8);
 
 
 
@@ -111,7 +111,7 @@ class Tableau1 extends Phaser.Scene{
         bg1Tree3.setScale  (0.6,0.6);
         let bg1Tree1=this.add.image(-20, -25, 'bg1-tree-1').setOrigin(0, 0);
         let bg1Terrain1=this.add.image(700, 300, 'bg1-terrain-1').setOrigin(0, 0);
-        let bg1Terrain4=this.add.image(400, 400, 'bg1-terrain-4').setOrigin(0, 0);
+        let bg1Terrain4=this.add.image(400, 420, 'bg1-terrain-4').setOrigin(0, 0);
 
         this.bg1Container.add(bg1Terrain3);
         this.bg1Container.add(bg1Terrain4);
