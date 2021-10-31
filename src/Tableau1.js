@@ -28,6 +28,7 @@ class Tableau1 extends Phaser.Scene{
         this.load.image('gTree1', 'assets/level/ground/g-tree-1.png');
         this.load.image('gTree2', 'assets/level/ground/g-tree-2.png');
         this.load.image('gStone1', 'assets/level/ground/g-stone-1.png');
+        this.load.image('gMushroom1', 'assets/level/ground/g-mushroom1.png');
 
 
         //au lieu d'écrire 5 lignes quasi identiques, on charge l'herbe avec une boucle
@@ -154,6 +155,10 @@ class Tableau1 extends Phaser.Scene{
         this.groundContainer.add(stone1);
         stone1.setScale(1, 1.5);
 
+        let mushroom1=this.add.image(140, 275, 'gMushroom1').setOrigin(0, 0);
+        this.groundContainer.add(mushroom1);
+        mushroom1.setScale(0.9, 0.9);
+        mushroom1.setRotation(0.2)
 
         /**
          * Terrain 1
