@@ -57,9 +57,10 @@ class Tableau1 extends Phaser.Scene{
         this.load.image('gGrass3', 'assets/level/ground/g-grass-3.png');
         this.load.image('gGrass5', 'assets/level/ground/g-grass-5.png');
         this.load.image('gFellen1', 'assets/level/ground/g-fellen-tree-1.png');
-        this.load.image('zombie1', 'assets/level/ground/z1.png');
-        this.load.image('zombie2', 'assets/level/ground/z4.png');
-        this.load.image('zombie3', 'assets/level/ground/z12.png');
+        this.load.image('zombie1', 'assets/level/zombies/z1.png');
+        this.load.image('zombie2', 'assets/level/zombies/z4.png');
+        this.load.image('zombie3', 'assets/level/zombies/z12.png');
+
 
 
         //au lieu d'écrire 5 lignes quasi identiques, on charge l'herbe avec une boucle
@@ -74,12 +75,16 @@ class Tableau1 extends Phaser.Scene{
         for(let i=1;i<=3;i++){
             this.load.image('filterFilm'+i, 'assets/level/filters/film/frame-'+i+'.png');
         }
+        for(let i=1;i<=3;i++){
+            this.load.image('filterBloody'+i, 'assets/level/filters/bloody/frame'+i+'.png');
+        }
 
         //texture au fond  TODO élève : faire une boucle pour charger les 3 images et démontrer par la même que vous savez aller au plus simple
 
-        for(let i=1;i<=3;i++){
+        for(let i=1;i<=3;i++) {
             this.load.image('bg-animation-'+i, 'assets/level/background-2/bg-animation/bg-animation-'+i+'.png');
         }
+
     }
 
     /**
@@ -88,8 +93,26 @@ class Tableau1 extends Phaser.Scene{
      * TODO élèves : plus tard, continuez le décor vers la droite en vous servant des assets mis à votre disposition
      */
     create(){
+        /**
+         * Fond très clair avec une trame
+         * animation au dernier plan
+         * @type {Phaser.GameObjects.Sprite}
+         */
+        this.bgAnimation = this.add.sprite(0, 0, 'bgAnimation1').setOrigin(0,0);
+        //animation de 3 images
+        this.anims.create({
+            key: 'animation',
+            frames: [
+                {key:'bg-animation-1'},
+                {key:'bg-animation-2'},
+                {key:'bg-animation-3'},
+            ],
+            frameRate: 16,
+            repeat: -1
+        });
+        this.bgAnimation.play('animation');
 
-        let bgAnimation1=this.add.sprite(0,0, 'bg-animation-1').setOrigin(0,0);
+        //let bgAnimation1=this.add.sprite(0,0, 'bg-animation-1').setOrigin(0,0);
         //--------------background 2 (tout au fond et flou)--------------------
 
         /**
@@ -192,6 +215,19 @@ class Tableau1 extends Phaser.Scene{
          * Arbre
          * @type {Phaser.GameObjects.Image}
          */
+
+        let zombie3=this.add.image(180, 130, 'zombie3').setOrigin(0, 0);
+        this.groundContainer.add(zombie3);
+        zombie3.setScale(1, 1.5);
+
+        let zombie1=this.add.image(1510, 200, 'zombie1').setOrigin(0, 0);
+        this.groundContainer.add(zombie1);
+        zombie1.setScale(1, 0.8);
+
+        let zombie2=this.add.image(1200, 260, 'zombie2').setOrigin(0, 0);
+        this.groundContainer.add(zombie2);
+        zombie2.setScale(1, 0.6);
+
         let vine101=this.add.image(500,-10, 'gLiane3').setOrigin(0,0);
         this.groundContainer.add(vine101);
         vine101.setScale(1,0.7);
@@ -357,9 +393,10 @@ class Tableau1 extends Phaser.Scene{
         this.groundContainer.add(gspike2);
         gspike2.setScale(1, 1.5);
 
-        let zombie1=this.add.image(1510, 400, 'zombie1').setOrigin(0, 0);
-        this.groundContainer.add(zombie1);
-        gspike2.setScale(1, 1.5);
+
+
+
+
 
 
 
@@ -380,9 +417,9 @@ class Tableau1 extends Phaser.Scene{
         this.anims.create({
             key: 'film',
             frames: [
-                {key:'filterFilm1'},
-                {key:'filterFilm2'},
-                {key:'filterFilm3'},
+                {key:'filterBloody1'},
+                {key:'filterBloody2'},
+                {key:'filterBloody3'},
             ],
             frameRate: 16,
             repeat: -1
@@ -402,7 +439,7 @@ class Tableau1 extends Phaser.Scene{
         // Définit l'espace de déplacement de la caméra
         this.cameras.main.setBounds(0, 0, 2000, 540);
         //définit à quelles vitesse se déplacent nos différents plans
-        bgAnimation1.scrollFactorX=0;
+        this.bgAnimation.scrollFactorX=0;
         this.filterFilm.scrollFactorX=0;
         this.bg2Container.scrollFactorX=0.6;
         this.bg1Container.scrollFactorX=0.8;
