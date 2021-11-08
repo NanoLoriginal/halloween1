@@ -78,6 +78,10 @@ class Tableau1 extends Phaser.Scene{
         for(let i=1;i<=3;i++){
             this.load.image('filterBloody'+i, 'assets/level/filters/bloody/frame'+i+'.png');
         }
+        for(let i=1;i<=3;i++){
+            this.load.image('filterWeather'+i, 'assets/level/weather/rain/frame'+i+'.png');
+        }
+
 
         //texture au fond  TODO élève : faire une boucle pour charger les 3 images et démontrer par la même que vous savez aller au plus simple
 
@@ -426,6 +430,20 @@ class Tableau1 extends Phaser.Scene{
         });
         this.filterFilm.play('film');
 
+        this.filterWeather = this.add.sprite(0, 0, 'filterWeather1').setOrigin(0,0);
+        //animation de 3 images
+        this.anims.create({
+            key: 'weather',
+            frames: [
+                {key:'filterWeather1'},
+                {key:'filterWeather2'},
+                {key:'filterWeather3'},
+            ],
+            frameRate: 16,
+            repeat: -1
+        });
+        this.filterWeather.play('weather');
+
         //TODO élève faire une animation du même genre que filter mais pour bgAnimationA
 
         //gestion du parallaxe
@@ -441,6 +459,7 @@ class Tableau1 extends Phaser.Scene{
         //définit à quelles vitesse se déplacent nos différents plans
         this.bgAnimation.scrollFactorX=0;
         this.filterFilm.scrollFactorX=0;
+        this.filterWeather.scrollFactorX=0;
         this.bg2Container.scrollFactorX=0.6;
         this.bg1Container.scrollFactorX=0.8;
         this.groundContainer.scrollFactorX=1;
