@@ -58,7 +58,7 @@ class Tableau1 extends Phaser.Scene{
      */
     create(){
 
-
+        let bgAnimation1=this.add.sprite(0,0, 'bg-animation-1').setOrigin(0,0);
         //--------------background 2 (tout au fond et flou)--------------------
 
         /**
@@ -217,7 +217,7 @@ class Tableau1 extends Phaser.Scene{
         // Définit l'espace de déplacement de la caméra
         this.cameras.main.setBounds(0, 0, 2000, 540);
         //définit à quelles vitesse se déplacent nos différents plans
-        bgAnimationA.scrollFactorX=0;
+        bgAnimation1.scrollFactorX=0;
         this.filterFilm.scrollFactorX=0;
         this.bg2Container.scrollFactorX=0.2;
         this.bg1Container.scrollFactorX=0.4;
